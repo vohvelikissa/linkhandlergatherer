@@ -10,7 +10,7 @@ int main(int args, char * argv[]) {
 		system(toBeExecuted);
 		system("sed -i 's/\\swww.//g' changethis.txt");
 		system("cat changethis.txt | awk '{$1=$1;print}'");
-		system("w3m $(cat changethis.txt)");
+		system("wget --tries=1 $(cat changethis.txt)");
 	} else {
 		printf("INSERT A SEARCH TERM");
 	}
